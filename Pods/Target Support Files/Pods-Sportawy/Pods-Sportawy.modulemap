@@ -1,0 +1,6 @@
+module Pods_Sportawy {
+  umbrella header "Pods-Sportawy-umbrella.h"
+
+  export *
+  module * { export * }
+}
