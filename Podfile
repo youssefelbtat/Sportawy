@@ -4,6 +4,6 @@ target 'Sportawy' do
   pod 'Kingfisher', '~> 7.0'
   pod 'ReachabilitySwift'
   pod 'Alamofire'
-	
+  pod 'lottie-ios'	
 
 end

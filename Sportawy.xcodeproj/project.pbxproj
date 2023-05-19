@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044821242A17F333003F26D6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044821232A17F333003F26D6 /* SplashScreen.swift */; };
 		045514972A154F9B00CF97FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514962A154F9B00CF97FE /* AppDelegate.swift */; };
 		045514992A154F9B00CF97FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514982A154F9B00CF97FE /* SceneDelegate.swift */; };
 		0455149B2A154F9B00CF97FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455149A2A154F9B00CF97FE /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		045514A32A154F9D00CF97FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045514A12A154F9D00CF97FE /* LaunchScreen.storyboard */; };
 		045514AB2A1550F000CF97FE /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514AA2A1550F000CF97FE /* HomeScreen.swift */; };
 		045514AD2A15518900CF97FE /* FavoriteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514AC2A15518900CF97FE /* FavoriteScreen.swift */; };
+		049C5F212A17EF5F009C7732 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 049C5F202A17EF5F009C7732 /* splash.json */; };
 		04CA00652A16FA0600883229 /* LeaguesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */; };
 		04CA00672A16FA4300883229 /* LeaguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */; };
 		04CA006B2A16FC9E00883229 /* LeaguesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA006A2A16FC9E00883229 /* LeaguesListScreen.swift */; };
@@ -34,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044821232A17F333003F26D6 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		045514932A154F9B00CF97FE /* Sportawy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportawy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045514962A154F9B00CF97FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045514982A154F9B00CF97FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		045514A42A154F9D00CF97FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045514AA2A1550F000CF97FE /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		045514AC2A15518900CF97FE /* FavoriteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreen.swift; sourceTree = "<group>"; };
+		049C5F202A17EF5F009C7732 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../SportsImages/splash.json; sourceTree = "<group>"; };
 		04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTableViewCell.xib; sourceTree = "<group>"; };
 		04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableViewCell.swift; sourceTree = "<group>"; };
 		04CA006A2A16FC9E00883229 /* LeaguesListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesListScreen.swift; sourceTree = "<group>"; };
@@ -76,11 +80,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044821202A17F139003F26D6 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				044821222A17F160003F26D6 /* ViewModel */,
+				044821212A17F155003F26D6 /* View */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		044821212A17F155003F26D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044821232A17F333003F26D6 /* SplashScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		044821222A17F160003F26D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0455148A2A154F9B00CF97FE = {
 			isa = PBXGroup;
 			children = (
-				04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */,
-				04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */,
 				045514952A154F9B00CF97FE /* Sportawy */,
 				045514942A154F9B00CF97FE /* Products */,
 				F677E4CCE550CBC19AA52E1E /* Pods */,
@@ -99,6 +125,7 @@
 		045514952A154F9B00CF97FE /* Sportawy */ = {
 			isa = PBXGroup;
 			children = (
+				049C5F1F2A17EF31009C7732 /* resources */,
 				04D122AC2A16DA4700CD2768 /* Modules */,
 				04D122AB2A16D86400CD2768 /* Model */,
 				04D122A82A16D7E300CD2768 /* View */,
@@ -108,9 +135,16 @@
 				0455149A2A154F9B00CF97FE /* ViewController.swift */,
 				0455149F2A154F9D00CF97FE /* Assets.xcassets */,
 				045514A42A154F9D00CF97FE /* Info.plist */,
-				045514AC2A15518900CF97FE /* FavoriteScreen.swift */,
 			);
 			path = Sportawy;
+			sourceTree = "<group>";
+		};
+		049C5F1F2A17EF31009C7732 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				049C5F202A17EF5F009C7732 /* splash.json */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		04CA00682A16FC2700883229 /* leagues List  */ = {
@@ -126,6 +160,8 @@
 		04CA00692A16FC6E00883229 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */,
+				04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */,
 				04CA006A2A16FC9E00883229 /* LeaguesListScreen.swift */,
 			);
 			path = View;
@@ -194,6 +230,7 @@
 		04D122AC2A16DA4700CD2768 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				044821202A17F139003F26D6 /* SplashScreen */,
 				04CA00682A16FC2700883229 /* leagues List  */,
 				04D122AE2A16DA7A00CD2768 /* Favorite */,
 				04D122AD2A16DA6300CD2768 /* Home */,
@@ -265,6 +302,7 @@
 		04D122BA2A16DD0100CD2768 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				045514AC2A15518900CF97FE /* FavoriteScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +387,7 @@
 				045514A02A154F9D00CF97FE /* Assets.xcassets in Resources */,
 				04CA00652A16FA0600883229 /* LeaguesTableViewCell.xib in Resources */,
 				0455149E2A154F9B00CF97FE /* Main.storyboard in Resources */,
+				049C5F212A17EF5F009C7732 /* splash.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044821242A17F333003F26D6 /* SplashScreen.swift in Sources */,
 				04CA00712A178E4F00883229 /* LeaguesListViewModel.swift in Sources */,
 				045514AB2A1550F000CF97FE /* HomeScreen.swift in Sources */,
 				04D122A22A16D70A00CD2768 /* AlamofireNetworkingDataSource.swift in Sources */,
