@@ -28,10 +28,9 @@ class LeaguesListViewModel {
     }
     
     func loadAllLeagues(){
-        print("Hello From Load all  leagues .......")
         netWorkingDataSource.loadDataFromAPI { [weak self] (result : LeagueResult?) in
             if let items = result?.result {
-                print("The items featched : \(items.count)")
+                
                 self!.allSelctedSportLeagues = items
                 
             }

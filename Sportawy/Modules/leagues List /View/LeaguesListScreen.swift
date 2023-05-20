@@ -27,6 +27,9 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
         
         viewModel.loadAllLeagues()
         
+        let nib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
+        leaguesTableView.register(nib, forCellReuseIdentifier: "cell")
+        
         viewModel.bindResultToView = { [weak self] in
             
             self?.leaguesTableView.reloadData()
@@ -36,27 +39,30 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
        
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.allSelctedSportLeagues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "legcell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeaguesTableViewCell
 
-        cell.textLabel?.text = viewModel.allSelctedSportLeagues[indexPath.row].league_name
+        cell.lblLeagueName?.text = viewModel.allSelctedSportLeagues[indexPath.row].league_name
         
-        cell.detailTextLabel?.text = viewModel.allSelctedSportLeagues[indexPath.row].country_name
+        cell.lblLeagueCounty?.text = viewModel.allSelctedSportLeagues[indexPath.row].country_name
         
-        let url = URL(string: viewModel.allSelctedSportLeagues[indexPath.row].league_logo ?? "") 
+        let imageUrl = URL(string: viewModel.allSelctedSportLeagues[indexPath.row].league_logo ?? "")
         
-        cell.imageView!.kf.indicatorType = .activity
+        let resizedImage = UtilitiesViews.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 90, height: 90))
         
-        cell.imageView!.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "Leagues"),
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90) ) |> RoundCornerImageProcessor(cornerRadius: 10)
+        cell.leagueImage!.kf.indicatorType = .activity
+        
+        cell.leagueImage!.kf.setImage(
+            with: imageUrl,
+            placeholder: resizedImage,
             options: [
+                .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
                 .cacheOriginalImage

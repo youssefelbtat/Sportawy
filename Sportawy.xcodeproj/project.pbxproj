@@ -160,8 +160,6 @@
 		04CA00692A16FC6E00883229 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */,
-				04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */,
 				04CA006A2A16FC9E00883229 /* LeaguesListScreen.swift */,
 			);
 			path = View;
@@ -213,6 +211,8 @@
 		04D122A82A16D7E300CD2768 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */,
+				04CA00642A16FA0600883229 /* LeaguesTableViewCell.xib */,
 				0455149C2A154F9B00CF97FE /* Main.storyboard */,
 				045514A12A154F9D00CF97FE /* LaunchScreen.storyboard */,
 				04D122A92A16D84400CD2768 /* UtilitiesViews.swift */,

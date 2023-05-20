@@ -52,7 +52,7 @@ class HomeScreen: UIViewController, UICollectionViewDataSource, UICollectionView
         let sec = self.storyboard?.instantiateViewController(withIdentifier: "leaguesScreen") as! LeaguesListScreen
            
         //sec.itemDatels = presenter.allData![indexPath.row]
-       present(sec, animated: true)
+        navigationController?.pushViewController(sec, animated: true)
    }
     
     
