@@ -49,10 +49,33 @@ class HomeScreen: UIViewController, UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sec = self.storyboard?.instantiateViewController(withIdentifier: "leaguesScreen") as! LeaguesListScreen
+        
+       
+        
+        if indexPath.row < 4 {
+            let sec = self.storyboard?.instantiateViewController(withIdentifier: "leaguesScreen") as! LeaguesListScreen
+            
+            var selectedSportUrl : String!
+            switch indexPath.row {
+            case 0:
+                selectedSportUrl = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+            case 1:
+                selectedSportUrl = "https://apiv2.allsportsapi.com/basketball/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+                
+            case 2:
+                selectedSportUrl = "https://apiv2.allsportsapi.com/cricket/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+            case 3:
+                selectedSportUrl = "https://apiv2.allsportsapi.com/tennis/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
            
-        //sec.itemDatels = presenter.allData![indexPath.row]
-        navigationController?.pushViewController(sec, animated: true)
+            default:
+                break 
+                
+            }
+            
+            sec.strUrl = selectedSportUrl
+            navigationController?.pushViewController(sec, animated: true)
+        }
+        
    }
     
     

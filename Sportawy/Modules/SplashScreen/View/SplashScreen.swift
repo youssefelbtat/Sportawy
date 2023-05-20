@@ -18,7 +18,7 @@ class SplashScreen: UIViewController {
         splashAnamationView.animationSpeed = 0.6
         splashAnamationView.play()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self.showTabBarScreen()
                 }
 

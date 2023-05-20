@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043557C12A18F0E900D120CB /* Sportawy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 043557BF2A18F0E900D120CB /* Sportawy.xcdatamodeld */; };
+		043557C32A19032E00D120CB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043557C22A19032E00D120CB /* Models.swift */; };
 		044821242A17F333003F26D6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044821232A17F333003F26D6 /* SplashScreen.swift */; };
 		045514972A154F9B00CF97FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514962A154F9B00CF97FE /* AppDelegate.swift */; };
 		045514992A154F9B00CF97FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045514982A154F9B00CF97FE /* SceneDelegate.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043557C02A18F0E900D120CB /* Sportawy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sportawy.xcdatamodel; sourceTree = "<group>"; };
+		043557C22A19032E00D120CB /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		044821232A17F333003F26D6 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		045514932A154F9B00CF97FE /* Sportawy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportawy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045514962A154F9B00CF97FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				0455149A2A154F9B00CF97FE /* ViewController.swift */,
 				0455149F2A154F9D00CF97FE /* Assets.xcassets */,
 				045514A42A154F9D00CF97FE /* Info.plist */,
+				043557BF2A18F0E900D120CB /* Sportawy.xcdatamodeld */,
 			);
 			path = Sportawy;
 			sourceTree = "<group>";
@@ -145,6 +150,29 @@
 				049C5F202A17EF5F009C7732 /* splash.json */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		04B4D6522A19830900145EA7 /* leagueDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04B4D6542A1983BF00145EA7 /* View */,
+				04B4D6532A1983A500145EA7 /* ViewModel */,
+			);
+			path = leagueDetailsScreen;
+			sourceTree = "<group>";
+		};
+		04B4D6532A1983A500145EA7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04B4D6542A1983BF00145EA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04CA00682A16FC2700883229 /* leagues List  */ = {
@@ -223,6 +251,7 @@
 		04D122AB2A16D86400CD2768 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				043557C22A19032E00D120CB /* Models.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +259,7 @@
 		04D122AC2A16DA4700CD2768 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				04B4D6522A19830900145EA7 /* leagueDetailsScreen */,
 				044821202A17F139003F26D6 /* SplashScreen */,
 				04CA00682A16FC2700883229 /* leagues List  */,
 				04D122AE2A16DA7A00CD2768 /* Favorite */,
@@ -434,10 +464,12 @@
 				04D122B72A16DBBF00CD2768 /* HomeModels.swift in Sources */,
 				04CA006B2A16FC9E00883229 /* LeaguesListScreen.swift in Sources */,
 				045514992A154F9B00CF97FE /* SceneDelegate.swift in Sources */,
+				043557C32A19032E00D120CB /* Models.swift in Sources */,
 				04D122B02A16DAE800CD2768 /* HomeViewModel.swift in Sources */,
 				045514AD2A15518900CF97FE /* FavoriteScreen.swift in Sources */,
 				04D122A52A16D78E00CD2768 /* LocalDataSource.swift in Sources */,
 				04D122A02A16D6D400CD2768 /* NetworkingDataSource.swift in Sources */,
+				043557C12A18F0E900D120CB /* Sportawy.xcdatamodeld in Sources */,
 				04D1229B2A16858700CD2768 /* SportsCollectionsCell.swift in Sources */,
 				04CA006F2A16FF9800883229 /* LeaguesModel.swift in Sources */,
 				04D122BE2A16DD3A00CD2768 /* FavoriteViewModel.swift in Sources */,
@@ -660,6 +692,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		043557BF2A18F0E900D120CB /* Sportawy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				043557C02A18F0E900D120CB /* Sportawy.xcdatamodel */,
+			);
+			currentVersion = 043557C02A18F0E900D120CB /* Sportawy.xcdatamodel */;
+			path = Sportawy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0455148B2A154F9B00CF97FE /* Project object */;
 }

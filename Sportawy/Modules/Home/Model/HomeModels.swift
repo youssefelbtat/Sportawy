@@ -13,11 +13,13 @@ struct HomeSportsModel {
     static let allSports : [(String , String)] = [
         ("Football" , "football"),
         ("Basketball" , "basketball"),
-        ("Tennis" , "tennis"),
-        ("Golf" , "golf"),
         ("Cricket" , "Cricket"),
-        ("Boxing" , "boxing"),
+        ("Tennis" , "tennis"),
+        ("Hockey","hockey"),
+        ("Baseball","baseball"),
         ("American Football" , "american"),
+        ("Golf" , "golf"),
+        ("Boxing" , "boxing"),
         ("Bodybuilding" , "bodybuilding")
     ]
     

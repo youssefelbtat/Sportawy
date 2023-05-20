@@ -9,4 +9,7 @@ import Foundation
 
 protocol LocalDataSource {
     
+    func insertItemToDatabase(item: LeagueItem)
+    func removeItemToDatabase(league_key : Int)
+    func loadDataFromDB() -> [LeagueItem]
 }

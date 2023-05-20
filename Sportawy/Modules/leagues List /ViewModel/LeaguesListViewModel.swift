@@ -10,20 +10,30 @@ import Foundation
 
 class LeaguesListViewModel {
     
-    var bindResultToView : (()->()) = {}
+    var bindDataToView : (()->()) = {}
     
     var allSelctedSportLeagues : [LeagueItem] = [] {
         didSet{
             DispatchQueue.main.async {
-                self.bindResultToView()
+                self.bindDataToView()
+            }
+        }
+    }
+    
+    var allFavSports : [LeagueItem] = [] {
+        
+        didSet{
+            DispatchQueue.main.async {
+                self.bindDataToView()
             }
         }
     }
     
     var netWorkingDataSource : NetWorkingDataSource
+    var localDataSource : LocalDataSource
     
-    init(netWorkingDataSource: NetWorkingDataSource) {
-        
+    init(netWorkingDataSource: NetWorkingDataSource , locaDataSource : LocalDataSource) {
+        self.localDataSource = locaDataSource
         self.netWorkingDataSource = netWorkingDataSource
     }
     
@@ -36,4 +46,25 @@ class LeaguesListViewModel {
             }
         }
     }
+    
+    func loadAllFavLeagues(){
+        
+        self.allFavSports = localDataSource.loadDataFromDB()
+    }
+    
+    func addToFav(item : LeagueItem){
+        
+        localDataSource.insertItemToDatabase(item: item)
+        
+        self.loadAllFavLeagues()
+    }
+    
+    func removeFavItem(id : Int){
+        
+        localDataSource.removeItemToDatabase(league_key: id)
+        
+        self.loadAllFavLeagues()
+        
+    }
+    
 }

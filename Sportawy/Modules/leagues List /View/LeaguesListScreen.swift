@@ -10,6 +10,7 @@ import Kingfisher
 
 class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDataSource {
    
+    var strUrl : String!
     
     @IBOutlet weak var leaguesTableView: UITableView!
     
@@ -23,20 +24,20 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
         leaguesTableView.dataSource = self
         leaguesTableView.delegate = self
         viewModel = LeaguesListViewModel(netWorkingDataSource: AlamofireNetworkingDataSource(
-            url: "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82" ))
+            url: strUrl ), locaDataSource: CoreDataLocalDataSource.instance)
         
         viewModel.loadAllLeagues()
+        viewModel.loadAllFavLeagues()
         
         let nib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         leaguesTableView.register(nib, forCellReuseIdentifier: "cell")
         
-        viewModel.bindResultToView = { [weak self] in
+        viewModel.bindDataToView = { [weak self] in
             
             self?.leaguesTableView.reloadData()
             
         }
-
-       
+  
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +68,18 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
+        
+        
+        cell.itemToAddToFav = viewModel.allSelctedSportLeagues[indexPath.row]
+        
+        if viewModel.allFavSports.contains(where: {$0.league_key == viewModel.allSelctedSportLeagues[indexPath.row].league_key}) {
+            cell.isFavorite = true
+            cell.btnfav.setImage(UIImage(systemName: "heart.fill"),for: .normal)
+        } else {
+            cell.isFavorite = false
+            cell.btnfav.setImage(UIImage(systemName: "heart"),for: .normal)
+        }
+
         
         return cell
     }

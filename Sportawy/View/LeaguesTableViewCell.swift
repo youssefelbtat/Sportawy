@@ -9,6 +9,10 @@ import UIKit
 
 class LeaguesTableViewCell: UITableViewCell {
 
+    var itemToAddToFav: LeagueItem?
+    var isFavorite: Bool?
+    let dSourceInstance = CoreDataLocalDataSource.instance
+
     @IBOutlet weak var lblLeagueCounty: UILabel!
     @IBOutlet weak var leagueImage: UIImageView!
     @IBOutlet weak var lblLeagueName: UILabel!
@@ -29,5 +33,18 @@ class LeaguesTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnFavAction(_ sender: Any) {
+        
+        var image:UIImage!
+        if !isFavorite! {
+            self.dSourceInstance.insertItemToDatabase(item: self.itemToAddToFav!)
+            image = UIImage(systemName: "heart.fill")
+            self.isFavorite!.toggle()
+            self.btnfav.setImage(image, for: .normal)
+        }else{
+            self.dSourceInstance.removeItemToDatabase(league_key: (self.itemToAddToFav?.league_key)!)
+                image = UIImage(systemName: "heart")
+                self.isFavorite!.toggle()
+                self.btnfav.setImage(image, for: .normal)
+        }
     }
 }
