@@ -83,6 +83,15 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
+        
+        sec.modalPresentationStyle = .pageSheet
+       self.present(sec, animated: true, completion: nil)
+    }
+    
+    
 
    
 

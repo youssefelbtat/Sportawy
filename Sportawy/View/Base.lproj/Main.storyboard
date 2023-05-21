@@ -116,8 +116,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="IAd-dm-1My">
                                                     <rect key="frame" x="0.0" y="0.0" width="186" height="180"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="186" id="7Zg-Wb-9Ow"/>
                                                         <constraint firstAttribute="height" constant="180" id="bsw-w3-27M"/>
+                                                        <constraint firstAttribute="width" constant="186" id="cpg-hi-4rK"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-DN-FEd">
@@ -142,6 +142,7 @@
                                         <connections>
                                             <outlet property="imgSportCell" destination="IAd-dm-1My" id="fWZ-OF-oFw"/>
                                             <outlet property="labSportTitle" destination="YAA-DN-FEd" id="3Oe-G4-aE0"/>
+                                            <outlet property="widthImageConstrin" destination="cpg-hi-4rK" id="0gH-H1-n1w"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -224,6 +225,156 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nC-ZQ-Kuj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2078.6259541984732" y="-492.25352112676057"/>
+        </scene>
+        <!--League Details Screen-->
+        <scene sceneID="4gY-QV-KpK">
+            <objects>
+                <viewController storyboardIdentifier="legdetails" id="2ND-2i-V8N" customClass="LeagueDetailsScreen" customModule="Sportawy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DCi-dw-sBB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eAZ-uO-KSX">
+                                <rect key="frame" x="0.0" y="84" width="393" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fmg-RP-XNL">
+                                    <size key="itemSize" width="367" height="190"/>
+                                    <size key="headerReferenceSize" width="50" height="48"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventcell" id="L6c-56-Ehh" customClass="EventAndResultsCell" customModule="Sportawy" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="48" width="367" height="190"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B4w-30-VWJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bV6-kk-4Zy">
+                                                    <rect key="frame" x="8" y="8" width="111" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Yv-NUs">
+                                                    <rect key="frame" x="248" y="8.0000000000000071" width="111" height="119.66666666666669"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-Lq-YyT">
+                                                    <rect key="frame" x="244" y="142" width="118" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2023-05-30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-aY-iyl">
+                                                    <rect key="frame" x="136" y="16" width="98" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK5-Z1-SO3">
+                                                    <rect key="frame" x="154" y="96" width="59" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V.S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PY-hA-s2g">
+                                                    <rect key="frame" x="154" y="52" width="59" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemCyanColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-YX-TBe">
+                                                    <rect key="frame" x="1" y="142" width="125" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7cP-aY-iyl" firstAttribute="top" secondItem="B4w-30-VWJ" secondAttribute="top" constant="16" id="a4T-uE-F8G"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <size key="customSize" width="367" height="190"/>
+                                        <connections>
+                                            <outlet property="firstImage" destination="bV6-kk-4Zy" id="y40-uj-Fo2"/>
+                                            <outlet property="lblAction" destination="4PY-hA-s2g" id="rk5-eC-kDz"/>
+                                            <outlet property="lblDate" destination="7cP-aY-iyl" id="nPS-Va-xa1"/>
+                                            <outlet property="lblFirstTeamName" destination="2y5-YX-TBe" id="gYn-FE-tgH"/>
+                                            <outlet property="lblSecTeamName" destination="vDc-Lq-YyT" id="01B-q3-yHF"/>
+                                            <outlet property="lblTime" destination="sK5-Z1-SO3" id="e57-4Q-Ss5"/>
+                                            <outlet property="secImage" destination="KGy-Yv-NUs" id="HLm-2U-mNy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamcell" id="ydH-vT-pwA" customClass="TeamCollectionViewCell" customModule="Sportawy" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="248" width="367" height="190"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EfG-tw-v5e">
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xei-Ak-LBT">
+                                                    <rect key="frame" x="5" y="8" width="357" height="140.66666666666666"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RealMadeid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0E-KY-akW">
+                                                    <rect key="frame" x="124.66666666666666" y="153.66666666666666" width="117.66666666666666" height="26.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="s0E-KY-akW" secondAttribute="bottom" constant="10" id="69g-9l-Xyo"/>
+                                                <constraint firstItem="s0E-KY-akW" firstAttribute="centerX" secondItem="Xei-Ak-LBT" secondAttribute="centerX" id="9xK-Mw-KID"/>
+                                                <constraint firstItem="Xei-Ak-LBT" firstAttribute="leading" secondItem="EfG-tw-v5e" secondAttribute="leading" constant="5" id="Mjj-wZ-8QH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xei-Ak-LBT" secondAttribute="trailing" constant="5" id="WJY-1W-lt6"/>
+                                                <constraint firstItem="s0E-KY-akW" firstAttribute="top" secondItem="Xei-Ak-LBT" secondAttribute="bottom" constant="5" id="g1d-Z6-XBZ"/>
+                                                <constraint firstItem="Xei-Ak-LBT" firstAttribute="top" secondItem="EfG-tw-v5e" secondAttribute="top" constant="8" id="xrp-Bw-3HO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgTeam" destination="Xei-Ak-LBT" id="Vwp-6e-tG7"/>
+                                            <outlet property="lblTeamName" destination="s0E-KY-akW" id="SMx-Z4-LeN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="ICw-Am-Zlj" customClass="CollectionViewHeader" customModule="Sportawy" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection View Section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2x-6C-UDg">
+                                            <rect key="frame" x="20" y="10.999999999999998" width="295" height="26.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="z2x-6C-UDg" secondAttribute="trailing" constant="78" id="3b0-or-JVy"/>
+                                        <constraint firstItem="z2x-6C-UDg" firstAttribute="top" secondItem="ICw-Am-Zlj" secondAttribute="top" constant="11" id="PBy-IW-Gxl"/>
+                                        <constraint firstItem="z2x-6C-UDg" firstAttribute="leading" secondItem="ICw-Am-Zlj" secondAttribute="leading" constant="20" symbolic="YES" id="ecU-cn-fM2"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="lblSectionHeader" destination="z2x-6C-UDg" id="5dy-OH-3h8"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gUA-O2-QIC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsCollectionView" destination="eAZ-uO-KSX" id="9VZ-Yq-Yph"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zX6-jv-hfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823.6641221374043" y="-492.25352112676057"/>
         </scene>
         <!--Splash Screen-->
         <scene sceneID="p9k-Ar-vjR">
