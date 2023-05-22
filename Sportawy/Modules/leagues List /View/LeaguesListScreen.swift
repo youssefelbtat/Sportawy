@@ -26,7 +26,7 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
         
         
         viewModel = LeaguesListViewModel(netWorkingDataSource: AlamofireNetworkingDataSource(
-            url: sportType.rawValue ), locaDataSource: CoreDataLocalDataSource.instance)
+            url: sportType ), locaDataSource: CoreDataLocalDataSource.instance)
         
         viewModel.loadAllLeagues()
         viewModel.loadAllFavLeagues()

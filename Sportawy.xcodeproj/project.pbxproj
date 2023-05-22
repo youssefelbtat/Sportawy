@@ -25,6 +25,7 @@
 		0462DBEF2A1C0C9D00D38000 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBEE2A1C0C9D00D38000 /* Enums.swift */; };
 		0462DBF52A1C12F600D38000 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF42A1C12F600D38000 /* Alerts.swift */; };
 		0462DBF72A1C147E00D38000 /* InternetConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */; };
+		0462DBF92A1C2DA500D38000 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF82A1C2DA500D38000 /* UrlCreator.swift */; };
 		049C5F212A17EF5F009C7732 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 049C5F202A17EF5F009C7732 /* splash.json */; };
 		04B72D6B2A1A81F6005DBA06 /* EventAndResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6A2A1A81F6005DBA06 /* EventAndResultsCell.swift */; };
 		04B72D6D2A1A8218005DBA06 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6C2A1A8218005DBA06 /* TeamCollectionViewCell.swift */; };
@@ -72,6 +73,7 @@
 		0462DBEE2A1C0C9D00D38000 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		0462DBF42A1C12F600D38000 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectivity.swift; sourceTree = "<group>"; };
+		0462DBF82A1C2DA500D38000 /* UrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreator.swift; sourceTree = "<group>"; };
 		049C5F202A17EF5F009C7732 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../SportsImages/splash.json; sourceTree = "<group>"; };
 		04B72D6A2A1A81F6005DBA06 /* EventAndResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAndResultsCell.swift; sourceTree = "<group>"; };
 		04B72D6C2A1A8218005DBA06 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				0462DBEE2A1C0C9D00D38000 /* Enums.swift */,
+				0462DBF82A1C2DA500D38000 /* UrlCreator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				045514AB2A1550F000CF97FE /* HomeScreen.swift in Sources */,
 				04D122A22A16D70A00CD2768 /* AlamofireNetworkingDataSource.swift in Sources */,
 				0455149B2A154F9B00CF97FE /* ViewController.swift in Sources */,
+				0462DBF92A1C2DA500D38000 /* UrlCreator.swift in Sources */,
 				04D122A72A16D7AC00CD2768 /* CoreDataLocalDataSource.swift in Sources */,
 				0462DBE72A1BFF7300D38000 /* Team.swift in Sources */,
 				04D122AA2A16D84400CD2768 /* UtilitiesViews.swift in Sources */,

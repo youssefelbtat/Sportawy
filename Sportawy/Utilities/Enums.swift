@@ -17,6 +17,4 @@ enum SportType : String {
     case golf = "Golf"
     case boxing = "Boxing"
     case bodybuilding = "Bodybuilding"
-    
-
 }
