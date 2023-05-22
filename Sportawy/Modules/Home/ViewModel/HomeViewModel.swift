@@ -11,7 +11,10 @@ class HomeViewModel {
     
     let allSorts = HomeSportsModel.allSports
     
-    
+    func checkInternetConnectivity()->Bool{
+        
+        return Connectivity.sharedInstance.isConnectedToInternet()
+    }
     
     
 }

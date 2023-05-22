@@ -10,7 +10,18 @@ import Foundation
 import Alamofire
 
 class AlamofireNetworkingDataSource: NetWorkingDataSource {
+    
+    
     private var url: URL!
+    
+    func setURL(_ url: String) {
+        
+        self.url = URL(string: url)
+    }
+    
+    init(){
+        
+    }
 
     init(url: String) {
         self.url = URL(string: url)

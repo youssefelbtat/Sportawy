@@ -10,17 +10,17 @@ import Foundation
 
 struct HomeSportsModel {
     
-    static let allSports : [(String , String)] = [
-        ("Football" , "football"),
-        ("Basketball" , "basketball"),
-        ("Cricket" , "Cricket"),
-        ("Tennis" , "tennis"),
-        ("Hockey","hockey"),
-        ("Baseball","baseball"),
-        ("American Football" , "american"),
-        ("Golf" , "golf"),
-        ("Boxing" , "boxing"),
-        ("Bodybuilding" , "bodybuilding")
+    static let allSports : [SportType] = [
+        .football,
+        .basketball,
+        .cricket,
+        .tennis,
+        .hockey,
+        .baseball,
+        .american,
+        .golf,
+        .boxing,
+        .bodybuilding
     ]
     
 }

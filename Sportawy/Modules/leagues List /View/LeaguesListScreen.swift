@@ -10,7 +10,7 @@ import Kingfisher
 
 class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDataSource {
    
-    var strUrl : String!
+    var sportType : SportType!
     
     @IBOutlet weak var leaguesTableView: UITableView!
     
@@ -23,8 +23,10 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
         
         leaguesTableView.dataSource = self
         leaguesTableView.delegate = self
+        
+        
         viewModel = LeaguesListViewModel(netWorkingDataSource: AlamofireNetworkingDataSource(
-            url: strUrl ), locaDataSource: CoreDataLocalDataSource.instance)
+            url: sportType.rawValue ), locaDataSource: CoreDataLocalDataSource.instance)
         
         viewModel.loadAllLeagues()
         viewModel.loadAllFavLeagues()
@@ -87,6 +89,7 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
         
+        sec.strKey = viewModel.allSelctedSportLeagues[indexPath.row].league_key
         sec.modalPresentationStyle = .pageSheet
        self.present(sec, animated: true, completion: nil)
     }

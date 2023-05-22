@@ -11,6 +11,9 @@ import Foundation
 class LeaguesListViewModel {
     
     var bindDataToView : (()->()) = {}
+    var netWorkingDataSource : NetWorkingDataSource
+    var localDataSource : LocalDataSource
+    
     
     var allSelctedSportLeagues : [LeagueItem] = [] {
         didSet{
@@ -28,9 +31,7 @@ class LeaguesListViewModel {
             }
         }
     }
-    
-    var netWorkingDataSource : NetWorkingDataSource
-    var localDataSource : LocalDataSource
+   
     
     init(netWorkingDataSource: NetWorkingDataSource , locaDataSource : LocalDataSource) {
         self.localDataSource = locaDataSource
