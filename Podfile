@@ -5,5 +5,6 @@ target 'Sportawy' do
   pod 'ReachabilitySwift'
   pod 'Alamofire'
   pod 'lottie-ios'	
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

@@ -9,22 +9,22 @@ import Foundation
 
 
 
-struct EventResponse: Codable {
+struct EventResponse: Decodable {
     let success: Int
-    let result: [EventInfo]
+    let result: [EventInfo]?
 }
 
 struct EventInfo: Codable {
-    let eventKey: Int
-    let eventDate: String
-    let eventTime: String
-    let firstTeamName: String
-    let homeTeamKey: Int
-    let secondTeamName: String
-    let awayTeamKey: Int
-    let firstTeamLogo: String
-    let secondTeamLogo: String
-    let eventFinalResult : String
+    let eventKey: Int?
+    let eventDate: String?
+    let eventTime: String?
+    let firstTeamName: String?
+    let homeTeamKey: Int?
+    let secondTeamName: String?
+    let awayTeamKey: Int?
+    let firstTeamLogo: String?
+    let secondTeamLogo: String?
+    let eventFinalResult : String?
 
     private enum CodingKeys: String, CodingKey {
         case eventKey = "event_key"

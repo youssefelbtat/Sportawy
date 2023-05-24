@@ -42,7 +42,7 @@ class LeaguesListViewModel {
         netWorkingDataSource.loadDataFromAPI { [weak self] (result : LeagueResult?) in
             if let items = result?.result {
                 
-                self!.allSelctedSportLeagues = items
+                self?.allSelctedSportLeagues = items
                 
             }
         }

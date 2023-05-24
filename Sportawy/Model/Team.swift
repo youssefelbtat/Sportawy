@@ -10,12 +10,12 @@
 
 import Foundation
 
-struct TeamResponse: Codable {
+struct TeamResponse: Decodable {
     let success: Int
     let result: [Team]
 }
 
-struct Team: Codable {
+struct Team: Decodable {
     let teamKey: Int
     let teamName: String
     let teamLogo: String
@@ -26,8 +26,8 @@ struct Team: Codable {
         case teamKey = "team_key"
         case teamName = "team_name"
         case teamLogo = "team_logo"
-        case players
-        case coaches
+        case players = "players"
+        case coaches = "coaches"
     }
 }
 

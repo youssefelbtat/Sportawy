@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum SportType : String {
     case football = "FootBall"
     case basketball = "Basketball"

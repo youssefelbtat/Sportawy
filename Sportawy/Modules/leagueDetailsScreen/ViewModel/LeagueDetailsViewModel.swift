@@ -31,7 +31,7 @@ class LeagueDetailsViewModel{
         }
     }
     
-    var allLeagueTeams : [TeamsInfo] = [] {
+    var allLeagueTeams : [Team] = [] {
         
         didSet{
             DispatchQueue.main.async {
@@ -51,7 +51,7 @@ class LeagueDetailsViewModel{
         netWorkingDataSource.loadDataFromAPI { [weak self] (result : EventResponse?) in
             if let items = result?.result {
                 
-                self!.allLeagueEvents = items
+                self?.allLeagueEvents = items
                 
             }
         }
@@ -62,7 +62,7 @@ class LeagueDetailsViewModel{
         netWorkingDataSource.loadDataFromAPI { [weak self] (result : EventResponse?) in
             if let items = result?.result {
                 
-                self!.allLeagueLastResults = items
+                self?.allLeagueLastResults = items
                 
             }
         }
@@ -70,10 +70,10 @@ class LeagueDetailsViewModel{
     
     func loadAllLeagueTeams(withUrl url: String){
         netWorkingDataSource.setURL(url)
-        netWorkingDataSource.loadDataFromAPI { [weak self] (result : TeamsResponse?) in
+        netWorkingDataSource.loadDataFromAPI { [weak self] (result : TeamResponse?) in
             if let items = result?.result {
                 
-                self!.allLeagueTeams = items
+                self?.allLeagueTeams = items
                 
             }
         }

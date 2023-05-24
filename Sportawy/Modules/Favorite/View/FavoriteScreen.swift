@@ -73,7 +73,7 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
         
         let imageUrl = URL(string: viewModel.allFavSports[indexPath.row].league_logo ?? "")
         
-        let resizedImage = UtilitiesViews.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 90, height: 90))
+        let resizedImage = ImageUtilites.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 90, height: 90))
         
         let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90) ) |> RoundCornerImageProcessor(cornerRadius: 10)
         cell.leagueImage!.kf.indicatorType = .activity

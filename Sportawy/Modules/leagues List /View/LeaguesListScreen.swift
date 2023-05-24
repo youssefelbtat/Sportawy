@@ -5,81 +5,92 @@
 //  Created by Mac on 19/05/2023.
 //
 
+
+
 import UIKit
 import Kingfisher
 
-class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDataSource {
-   
-    var sportType : SportType!
-    
-    @IBOutlet weak var leaguesTableView: UITableView!
+
+class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var viewModel: LeaguesListViewModel!
+    var indicator: UIActivityIndicatorView!
+    var sportType: SportType!
+    var filteredList: [LeagueItem] = []
+
     
+    @IBOutlet weak var leaguesTableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicator = UIActivityIndicatorView(style: .large)
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        indicator.startAnimating()
+        
         leaguesTableView.dataSource = self
         leaguesTableView.delegate = self
         
+        searchbar.delegate = self
         
-        viewModel = LeaguesListViewModel(netWorkingDataSource: AlamofireNetworkingDataSource(
-            url: sportType ), locaDataSource: CoreDataLocalDataSource.instance)
-        
-        viewModel.loadAllLeagues()
-        viewModel.loadAllFavLeagues()
+        viewModel = LeaguesListViewModel(
+            netWorkingDataSource: AlamofireNetworkingDataSource(url: URLCreator().createLeaguesURL(for: sportType)),
+            locaDataSource: CoreDataLocalDataSource.instance)
         
         let nib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         leaguesTableView.register(nib, forCellReuseIdentifier: "cell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // To Show The Indicator even if the internet is fast (:
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.viewModel.loadAllLeagues()
+            self.viewModel.loadAllFavLeagues()
+        })
         
         viewModel.bindDataToView = { [weak self] in
-            
+            self?.indicator.stopAnimating()
             self?.leaguesTableView.reloadData()
-            
         }
-  
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.allSelctedSportLeagues.count
+        if searchbar.text?.isEmpty == false {
+            return filteredList.count
+        } else {
+            return viewModel.allSelctedSportLeagues.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeaguesTableViewCell
-
-        cell.lblLeagueName?.text = viewModel.allSelctedSportLeagues[indexPath.row].league_name
         
-        cell.lblLeagueCounty?.text = viewModel.allSelctedSportLeagues[indexPath.row].country_name
+        let league: LeagueItem
+        if searchbar.text?.isEmpty == false {
+            league = filteredList[indexPath.row]
+        } else {
+            league = viewModel.allSelctedSportLeagues[indexPath.row]
+        }
         
-        let imageUrl = URL(string: viewModel.allSelctedSportLeagues[indexPath.row].league_logo ?? "")
+        cell.lblLeagueName?.text = league.league_name
+        cell.lblLeagueCounty?.text = league.country_name
         
-        let resizedImage = UtilitiesViews.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 90, height: 90))
+        ImageUtilites.downloadImageUsingKF(
+            withUrl: league.league_logo ?? "",
+            andPlaceholder: "Leagues",
+            inSize: CGSize(width: 90, height: 90),
+            showIn: cell.leagueImage)
         
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90) ) |> RoundCornerImageProcessor(cornerRadius: 10)
-        cell.leagueImage!.kf.indicatorType = .activity
+        cell.itemToAddToFav = league
         
-        cell.leagueImage!.kf.setImage(
-            with: imageUrl,
-            placeholder: resizedImage,
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        
-        
-        cell.itemToAddToFav = viewModel.allSelctedSportLeagues[indexPath.row]
-        
-        if viewModel.allFavSports.contains(where: {$0.league_key == viewModel.allSelctedSportLeagues[indexPath.row].league_key}) {
+        if viewModel.allFavSports.contains(where: { $0.league_key == league.league_key }) {
             cell.isFavorite = true
-            cell.btnfav.setImage(UIImage(systemName: "heart.fill"),for: .normal)
+            cell.btnfav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             cell.isFavorite = false
-            cell.btnfav.setImage(UIImage(systemName: "heart"),for: .normal)
+            cell.btnfav.setImage(UIImage(systemName: "heart"), for: .normal)
         }
 
         
@@ -89,13 +100,33 @@ class LeaguesListScreen : UIViewController , UITableViewDelegate , UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
         
-        sec.strKey = viewModel.allSelctedSportLeagues[indexPath.row].league_key
-        sec.modalPresentationStyle = .pageSheet
-       self.present(sec, animated: true, completion: nil)
+        let league: LeagueItem
+        if searchbar.text?.isEmpty == false {
+            league = filteredList[indexPath.row]
+        } else {
+            league = viewModel.allSelctedSportLeagues[indexPath.row]
+        }
+        
+        sec.leagueKey = "\(league.league_key ?? 0)"
+        sec.sportType = sportType
+        sec.modalPresentationStyle = .fullScreen
+        self.present(sec, animated: true, completion: nil)
     }
     
+    // MARK: - UISearchBarDelegate
     
-
-   
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredList = viewModel.allSelctedSportLeagues.filter { league in
+            guard let leagueName = league.league_name else { return false }
+            return leagueName.localizedCaseInsensitiveContains(searchText)
+        }
+        leaguesTableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
+
+
+
