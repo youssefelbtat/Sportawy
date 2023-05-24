@@ -38,5 +38,11 @@ class FavoriteViewModel{
         self.loadCachingData()
     }
     
+    func convertStringToSport(sportName : String) -> SportType?{
+        
+        return Converts().convertStringToSport(fromString: sportName)
+        
+    }
+    
     
 }

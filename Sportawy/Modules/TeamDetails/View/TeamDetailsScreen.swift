@@ -52,6 +52,9 @@ class TeamDetailsScreen: UIViewController , UITableViewDelegate , UITableViewDat
     }
     
     
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.TeamDetailsArray.first?.players?.count ?? 0

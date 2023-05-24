@@ -33,7 +33,7 @@ class LeaguesListViewModel {
     }
    
     
-    init(netWorkingDataSource: NetWorkingDataSource , locaDataSource : LocalDataSource) {
+    init(netWorkingDataSource: NetWorkingDataSource, locaDataSource : LocalDataSource) {
         self.localDataSource = locaDataSource
         self.netWorkingDataSource = netWorkingDataSource
     }

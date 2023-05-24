@@ -1,4 +1,4 @@
-# platform :ios, '12.0'
+platform :ios, '16.1'
 
 target 'Sportawy' do
   pod 'Kingfisher', '~> 7.0'

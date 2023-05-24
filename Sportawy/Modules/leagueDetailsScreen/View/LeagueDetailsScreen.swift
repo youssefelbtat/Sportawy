@@ -44,6 +44,9 @@ class LeagueDetailsScreen: UIViewController ,  UICollectionViewDataSource, UICol
         
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         viewModel = LeagueDetailsViewModel(netWorkingDataSource: AlamofireNetworkingDataSource())
         

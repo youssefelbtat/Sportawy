@@ -14,7 +14,7 @@ class URLCreator {
     
     func createLeaguesURL(for sportType: SportType) -> String {
         
-        return "\(baseURL)/\(sportType)/?met=Leagues&APIkey=\(apiKey)"
+        return "\(baseURL)/\(sportType.rawValue.lowercased())/?met=Leagues&APIkey=\(apiKey)"
        
     }
     

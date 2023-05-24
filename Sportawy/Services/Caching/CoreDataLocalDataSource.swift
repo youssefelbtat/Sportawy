@@ -20,6 +20,8 @@ class CoreDataLocalDataSource : LocalDataSource {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contextManager = appDelegate.persistentContainer.viewContext
     }
+    
+    
 
     func loadDataFromDB() -> [LeagueItem] {
         
@@ -33,14 +35,14 @@ class CoreDataLocalDataSource : LocalDataSource {
             itemsNS = try contextManager.fetch(fetch)
             
             for item in itemsNS{
-                let league_key = item.value(forKey: "league_key") as! Int
-                let league_logo = item.value(forKey: "league_logo") as! String
-                let league_name = item.value(forKey: "league_name") as! String
-                let country_name = item.value(forKey: "country_name") as! String
-                let country_key = item.value(forKey: "country_key") as! Int
-                let country_logo = item.value(forKey: "country_logo") as! String
-                
-                let item = LeagueItem(country_key: country_key, country_name: country_name, league_key: league_key, league_logo: league_logo, country_logo: country_logo, league_name: league_name)
+                let league_key = item.value(forKey: "league_key") as? Int
+                let league_logo = item.value(forKey: "league_logo") as? String
+                let league_name = item.value(forKey: "league_name") as? String
+                let country_name = item.value(forKey: "country_name") as? String
+                let country_key = item.value(forKey: "country_key") as? Int
+                let country_logo = item.value(forKey: "country_logo") as? String
+                let league_Type = item.value(forKey: "league_type") as? String
+                let item = LeagueItem(country_key: country_key, country_name: country_name, league_key: league_key, league_logo: league_logo, country_logo: country_logo, league_name: league_name , league_type: league_Type)
                 items.append(item)
             }
        
@@ -71,6 +73,7 @@ class CoreDataLocalDataSource : LocalDataSource {
         itemEntity.setValue(item.league_name, forKey: "league_name")
         itemEntity.setValue(item.country_name, forKey: "country_name")
         itemEntity.setValue(item.country_key, forKey: "country_key")
+        itemEntity.setValue(item.league_type, forKey: "league_type")
         
         if item.country_logo == nil {
             print("Non for cou")
@@ -87,6 +90,9 @@ class CoreDataLocalDataSource : LocalDataSource {
             print("Error when add item to fav  : \(e.localizedDescription)")
         }
     }
+    
+    
+    
     
     func removeItemToDatabase(league_key: Int) {
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

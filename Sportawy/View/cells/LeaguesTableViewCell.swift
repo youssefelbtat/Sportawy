@@ -12,7 +12,9 @@ class LeaguesTableViewCell: UITableViewCell {
     var itemToAddToFav: LeagueItem?
     var isFavorite: Bool?
     let dSourceInstance = CoreDataLocalDataSource.instance
-
+    var viewModel : LeaguesListViewModel?
+    
+    
     @IBOutlet weak var lblLeagueCounty: UILabel!
     @IBOutlet weak var leagueImage: UIImageView!
     @IBOutlet weak var lblLeagueName: UILabel!
@@ -25,6 +27,7 @@ class LeaguesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
 
     }
     
@@ -33,7 +36,7 @@ class LeaguesTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnFavAction(_ sender: Any) {
-        
+        print("The type : " + (itemToAddToFav?.league_type)!)
         var image:UIImage!
         if !isFavorite! {
             self.dSourceInstance.insertItemToDatabase(item: self.itemToAddToFav!)

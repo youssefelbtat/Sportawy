@@ -67,7 +67,7 @@ class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeaguesTableViewCell
         
-        let league: LeagueItem
+        var league: LeagueItem
         if searchbar.text?.isEmpty == false {
             league = filteredList[indexPath.row]
         } else {
@@ -83,6 +83,7 @@ class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataS
             inSize: CGSize(width: 90, height: 90),
             showIn: cell.leagueImage)
         
+        league.league_type = sportType.rawValue.lowercased()
         cell.itemToAddToFav = league
         
         if viewModel.allFavSports.contains(where: { $0.league_key == league.league_key }) {

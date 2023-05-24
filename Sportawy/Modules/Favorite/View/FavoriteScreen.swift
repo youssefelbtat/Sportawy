@@ -25,7 +25,11 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
         
         viewModel = FavoriteViewModel(databaseInstance: CoreDataLocalDataSource.instance)
         
-       
+        func checkInternetConnectivity()->Bool{
+            
+            return Connectivity.sharedInstance.isConnectedToInternet()
+        }
+        
         
         viewModel.bindResultToView = { [weak self] in
             
@@ -101,11 +105,24 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
         if editingStyle == .delete {
             
                 self.viewModel.deleteFavItem(itemKey: viewModel.allFavSports[indexPath.row].league_key!)
-            
-            favTableView.deleteRows(at: [indexPath], with: .automatic)
+                favTableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
+        
+    
+           let league = viewModel.allFavSports[indexPath.row]
+        
+        sec.leagueKey = "\(league.league_key ?? 0)"
+        sec.sportType = viewModel.convertStringToSport(sportName: league.league_type ?? "" )
+        sec.modalPresentationStyle = .fullScreen
+        self.present(sec, animated: true, completion: nil)
+    }
+    
+    
     
    
 
