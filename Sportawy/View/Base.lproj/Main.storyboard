@@ -381,8 +381,39 @@
                                             <outlet property="secImage" destination="KGy-Yv-NUs" id="HLm-2U-mNy"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="nodata" id="mk7-Uv-xHU" customClass="NoDataCell" customModule="Sportawy" customModuleProvider="target">
+                                        <rect key="frame" x="4" y="248" width="367" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="csE-ee-478">
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not data for this section " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41g-JV-Yqu">
+                                                    <rect key="frame" x="33" y="44" width="300" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="bQy-s3-rpL"/>
+                                                        <constraint firstAttribute="height" constant="63" id="xPW-Ne-jKK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.97122562290000003" green="0.64521401190000005" blue="0.010193131520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="41g-JV-Yqu" secondAttribute="bottom" constant="43" id="FI9-bI-1xu"/>
+                                                <constraint firstItem="41g-JV-Yqu" firstAttribute="leading" secondItem="csE-ee-478" secondAttribute="leading" constant="33" id="LZn-mh-E6G"/>
+                                                <constraint firstAttribute="trailing" secondItem="41g-JV-Yqu" secondAttribute="trailing" constant="34" id="Q4p-S3-XE0"/>
+                                                <constraint firstItem="41g-JV-Yqu" firstAttribute="top" secondItem="csE-ee-478" secondAttribute="top" constant="44" id="gm1-QP-nxR"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="367" height="150"/>
+                                        <connections>
+                                            <outlet property="lblNoData" destination="41g-JV-Yqu" id="hG1-uz-jVB"/>
+                                        </connections>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamcell" id="ydH-vT-pwA" customClass="TeamCollectionViewCell" customModule="Sportawy" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="248" width="262.66666666666669" height="190"/>
+                                        <rect key="frame" x="56" y="408" width="262.66666666666669" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EfG-tw-v5e">
                                             <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="190"/>

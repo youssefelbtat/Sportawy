@@ -14,7 +14,7 @@ class URLCreator {
     
     func createLeaguesURL(for sportType: SportType) -> String {
         
-        return "\(baseURL)/\(sportType.rawValue.lowercased())/?met=Leagues&APIkey=\(apiKey)"
+        return "\(baseURL)/\(sportType)/?met=Leagues&APIkey=\(apiKey)"
        
     }
     
@@ -45,7 +45,7 @@ class URLCreator {
         return "\(baseURL)/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(dateFormatter.string(from: oneYearAgo))&to=\(dateFormatter.string(from: currentDate))&APIkey=\(apiKey)"
     }
     
-    //https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=96&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82
+
     func createOneTeamURL(for sportType: SportType , teamId: String ) -> String{
          
         return "\(baseURL)/\(sportType)/?&met=Teams&teamId=\(teamId)&APIkey=\(apiKey)"

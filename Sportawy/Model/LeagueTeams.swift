@@ -26,4 +26,11 @@ struct Team: Decodable {
         case players = "players"
         case coaches = "coaches"
     }
+    
+    
+    
 }
+
+
+
+

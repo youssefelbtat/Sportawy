@@ -44,5 +44,10 @@ class FavoriteViewModel{
         
     }
     
+    func checkInternetConnectivity()->Bool{
+        
+        return Connectivity.sharedInstance.isConnectedToInternet()
+    }
+    
     
 }

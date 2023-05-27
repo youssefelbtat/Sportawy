@@ -7,29 +7,71 @@
 
 import XCTest
 @testable import Sportawy
+//import Alamofire
 final class SportawyTests: XCTestCase {
-
+    
+    //var urlCreator : URLCreator!
     override func setUpWithError() throws {
+        //  urlCreator = URLCreator()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
+      //  urlCreator = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testCreateLeaguesURL() {
+      
+        
+        let expectedURL = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+        
+        let actualURL = urlCreator.createLeaguesURL(for: SportType.football)
+        
+        XCTAssertEqual(actualURL, expectedURL)
     }
+    
+    func testCreateUpcomingEventsURL() {
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+        let expectedURL = "https://apiv2.allsportsapi.com/football?met=Fixtures&leagueId=123&from=2023-05-25&to=2024-05-25&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+        
+        let id = "123"
+        
+        let actualURL = urlCreator.createUpcomingEventsURL(for: SportType.football, leagueId: id)
+        
+        XCTAssertTrue(actualURL == expectedURL)
     }
+    
+    func testCreateLatestResultsURL() {
+        let id = "123"
+        let actualURL = urlCreator.createUpcomingEventsURL(for: SportType.football, leagueId: id)
+        
+        XCTAssertNotNil(actualURL)
+    }
+    
+    func testCreateOneTeamURL() {
+       
+   
+        
+        let expectedURL = "https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=456&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+        let id = "456"
+        let actualURL = urlCreator.createOneTeamURL(for: SportType.basketball, teamId: id)
+        
+        XCTAssertFalse(expectedURL == actualURL)
+    }
+    
+    func testCreateTeamsURL() {
+       
+       
+        
+        let expectedURL = "https://apiv2.allsportsapi.com/football/?&met=Teams&leagueId=123&APIkey=31db8d4ada7770ceee6a59e49db726464f20538721615b14b40170d55749ba82"
+        let id = "123"
+        
+        let actualURL = urlCreator.createTeamsURL(for: sportType, leagueId: id)
+        
+        XCTAssertEqual(actualURL, expectedURL)
+    }
+    
 
 }
+

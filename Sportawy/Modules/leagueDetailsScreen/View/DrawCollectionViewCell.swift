@@ -44,7 +44,7 @@ class DrawSection {
         
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 32)
         let section = NSCollectionLayoutSection(group: group)
-       section.orthogonalScrollingBehavior = .paging
+     //  section.orthogonalScrollingBehavior = .paging
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 8, bottom: 8, trailing: 0)
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(45))
         let headerSupplementary = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)

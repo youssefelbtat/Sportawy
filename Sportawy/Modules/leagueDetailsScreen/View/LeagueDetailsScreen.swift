@@ -110,63 +110,88 @@ class LeagueDetailsScreen: UIViewController ,  UICollectionViewDataSource, UICol
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventcell", for: indexPath) as! EventAndResultsCell
+            if viewModel.allLeagueEvents.isEmpty {
             
-            let fImageUrl = viewModel.allLeagueEvents[indexPath.row].firstTeamLogo ?? ""
-            
-            let sImageUrl = viewModel.allLeagueEvents[indexPath.row].secondTeamLogo ?? ""
-                        
-            ImageUtilites.downloadImageUsingKF(
-                withUrl: fImageUrl ,
-                andPlaceholder: "Leagues",
-                inSize: CGSize(width: 90, height: 90), showIn: cell.firstImage)
-            
-            ImageUtilites.downloadImageUsingKF(
-                withUrl: sImageUrl,
-                andPlaceholder: "Leagues",
-                inSize: CGSize(width: 90, height: 90), showIn: cell.secImage)
-           
-            cell.lblDate.text = viewModel.allLeagueEvents[indexPath.row].eventDate
-            cell.lblTime.text = viewModel.allLeagueEvents[indexPath.row].eventTime
-            cell.lblSecTeamName.text = viewModel.allLeagueEvents[indexPath.row].secondTeamName
-            cell.lblFirstTeamName.text = viewModel.allLeagueEvents[indexPath.row].firstTeamName
-            
-            return cell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nodata", for: indexPath) as! NoDataCell
+                return cell
+            }
+            else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventcell", for: indexPath) as! EventAndResultsCell
+                
+                let fImageUrl = viewModel.allLeagueEvents[indexPath.row].firstTeamLogo ?? ""
+                
+                let sImageUrl = viewModel.allLeagueEvents[indexPath.row].secondTeamLogo ?? ""
+                
+                ImageUtilites.downloadImageUsingKF(
+                    withUrl: fImageUrl ,
+                    andPlaceholder: "Leagues",
+                    inSize: CGSize(width: 90, height: 90), showIn: cell.firstImage)
+                
+                ImageUtilites.downloadImageUsingKF(
+                    withUrl: sImageUrl,
+                    andPlaceholder: "Leagues",
+                    inSize: CGSize(width: 90, height: 90), showIn: cell.secImage)
+                
+                cell.lblDate.text = viewModel.allLeagueEvents[indexPath.row].eventDate
+                cell.lblTime.text = viewModel.allLeagueEvents[indexPath.row].eventTime
+                cell.lblSecTeamName.text = viewModel.allLeagueEvents[indexPath.row].secondTeamName
+                cell.lblFirstTeamName.text = viewModel.allLeagueEvents[indexPath.row].firstTeamName
+                
+                return cell
+                
+            }
             
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventcell", for: indexPath) as! EventAndResultsCell
+            if viewModel.allLeagueLastResults.isEmpty{
             
-            let fImageUrl = viewModel.allLeagueLastResults[indexPath.row].firstTeamLogo ?? ""
-            
-            let sImageUrl = viewModel.allLeagueLastResults[indexPath.row].secondTeamLogo ?? ""
-            
-            let resizedImage = ImageUtilites.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 60, height: 60))
-            
-            ImageUtilites.downloadImageUsingKF(
-                withUrl: fImageUrl,
-                andPlaceholder: "Leagues",
-                inSize: CGSize(width: 90, height: 90), showIn: cell.firstImage)
-            
-            ImageUtilites.downloadImageUsingKF(
-                withUrl: sImageUrl,
-                andPlaceholder: "Leagues",
-                inSize: CGSize(width: 90, height: 90), showIn: cell.secImage)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nodata", for: indexPath) as! NoDataCell
+                return cell
+            }else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventcell", for: indexPath) as! EventAndResultsCell
+                
+                let fImageUrl = viewModel.allLeagueLastResults[indexPath.row].firstTeamLogo ?? ""
+                
+                let sImageUrl = viewModel.allLeagueLastResults[indexPath.row].secondTeamLogo ?? ""
+                
+                let resizedImage = ImageUtilites.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 60, height: 60))
+                
+                ImageUtilites.downloadImageUsingKF(
+                    withUrl: fImageUrl,
+                    andPlaceholder: "Leagues",
+                    inSize: CGSize(width: 90, height: 90), showIn: cell.firstImage)
+                
+                ImageUtilites.downloadImageUsingKF(
+                    withUrl: sImageUrl,
+                    andPlaceholder: "Leagues",
+                    inSize: CGSize(width: 90, height: 90), showIn: cell.secImage)
+               
+                cell.lblDate.text = viewModel.allLeagueLastResults[indexPath.row].eventDate
+                cell.lblTime.text = viewModel.allLeagueLastResults[indexPath.row].eventTime
+                cell.lblSecTeamName.text = viewModel.allLeagueLastResults[indexPath.row].secondTeamName
+                cell.lblFirstTeamName.text = viewModel.allLeagueLastResults[indexPath.row].firstTeamName
+                cell.lblAction.text = viewModel.allLeagueLastResults[indexPath.row].eventFinalResult
+                
+                return cell
+            }
+          
            
-            cell.lblDate.text = viewModel.allLeagueLastResults[indexPath.row].eventDate
-            cell.lblTime.text = viewModel.allLeagueLastResults[indexPath.row].eventTime
-            cell.lblSecTeamName.text = viewModel.allLeagueLastResults[indexPath.row].secondTeamName
-            cell.lblFirstTeamName.text = viewModel.allLeagueLastResults[indexPath.row].firstTeamName
-            cell.lblAction.text = viewModel.allLeagueLastResults[indexPath.row].eventFinalResult
-            return cell
             
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamcell", for: indexPath) as! TeamCollectionViewCell
-            cell.lblTeamName.text = viewModel.allLeagueTeams[indexPath.row].teamName
-            ImageUtilites.downloadImageUsingKF(
-                withUrl: viewModel.allLeagueTeams[indexPath.row].teamLogo ?? "",
-                andPlaceholder: "Leagues",
-                inSize: CGSize(width: 90, height: 90), showIn: cell.imgTeam)
-            return cell
+            if viewModel.allLeagueTeams.isEmpty{
+            
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nodata", for: indexPath) as! NoDataCell
+                return cell
+            }
+            else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamcell", for: indexPath) as! TeamCollectionViewCell
+                cell.lblTeamName.text = viewModel.allLeagueTeams[indexPath.row].teamName
+                ImageUtilites.downloadImageUsingKF(
+                    withUrl: viewModel.allLeagueTeams[indexPath.row].teamLogo ?? "",
+                    andPlaceholder: "Leagues",
+                    inSize: CGSize(width: 90, height: 90), showIn: cell.imgTeam)
+                return cell
+                
+            }
         }
     }
     

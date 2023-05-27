@@ -24,12 +24,7 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
         favTableView.delegate = self
         
         viewModel = FavoriteViewModel(databaseInstance: CoreDataLocalDataSource.instance)
-        
-        func checkInternetConnectivity()->Bool{
-            
-            return Connectivity.sharedInstance.isConnectedToInternet()
-        }
-        
+
         
         viewModel.bindResultToView = { [weak self] in
             
@@ -111,15 +106,22 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
         
-    
-           let league = viewModel.allFavSports[indexPath.row]
+        if viewModel.checkInternetConnectivity(){
+            let sec = storyboard?.instantiateViewController(withIdentifier: "legdetails") as! LeagueDetailsScreen
+            
         
-        sec.leagueKey = "\(league.league_key ?? 0)"
-        sec.sportType = viewModel.convertStringToSport(sportName: league.league_type ?? "" )
-        sec.modalPresentationStyle = .fullScreen
-        self.present(sec, animated: true, completion: nil)
+            let league = viewModel.allFavSports[indexPath.row]
+            
+            sec.leagueKey = "\(league.league_key ?? 0)"
+            sec.sportType = viewModel.convertStringToSport(sportName: league.league_type ?? "" )
+            sec.modalPresentationStyle = .fullScreen
+            self.present(sec, animated: true, completion: nil)
+        }else{
+            AlertType.noInternet.showAlert(in: self)
+        }
+        
+       
     }
     
     
