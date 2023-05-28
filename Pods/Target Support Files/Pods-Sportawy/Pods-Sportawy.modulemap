@@ -1,4 +1,4 @@
-module Pods_Sportawy {
+framework module Pods_Sportawy {
   umbrella header "Pods-Sportawy-umbrella.h"
 
   export *

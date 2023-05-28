@@ -23,11 +23,11 @@ enum AlertType {
         
         switch self {
             case .noInternet:
-                return "No Internet Connection"
+            return ConstantsStrings.NO_INTERNET_ALERT_TITLE
             case .confirmRemove:
-                return "Remove from Favorites "
+            return ConstantsStrings.REMOVE_ALERT_TITLE
             case .comingSoon:
-                return "Coming Soon "
+            return ConstantsStrings.COMING_SOON_ALERT_TITLE
         }
     }
     
@@ -36,11 +36,11 @@ enum AlertType {
         switch self {
 
         case .noInternet:
-            return "No internet connection, Please check your network !"
+            return ConstantsStrings.NO_INTERNET_ALERT_MESSAGE
         case .confirmRemove:
-            return "Are you sure you want to remove this item from favorites?"
+            return ConstantsStrings.REMOVE_ITEM_ALERT_MESSAGE
         case .comingSoon:
-            return "This Feature will be available soon."
+            return ConstantsStrings.COMING_SOON_ALERT_MESSAGE
         }
     }
     

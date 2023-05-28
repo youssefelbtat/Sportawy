@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Converts {
+class Convertor {
     
     
     func convertStringToSport(fromString : String) -> SportType?{

@@ -40,7 +40,7 @@ class FavoriteViewModel{
     
     func convertStringToSport(sportName : String) -> SportType?{
         
-        return Converts().convertStringToSport(fromString: sportName)
+        return Convertor().convertStringToSport(fromString: sportName)
         
     }
     

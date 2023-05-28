@@ -34,9 +34,20 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04C270DF2A1E88B8007B14CD"
+               BlueprintIdentifier = "042063062A23E409000220BE"
                BuildableName = "SportawyTests.xctest"
                BlueprintName = "SportawyTests"
+               ReferencedContainer = "container:Sportawy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "04E693572A23DE4400CB5FF7"
+               BuildableName = "SportawyAppTests.xctest"
+               BlueprintName = "SportawyAppTests"
                ReferencedContainer = "container:Sportawy.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0420630A2A23E409000220BE /* UrlCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042063092A23E409000220BE /* UrlCreatorTest.swift */; };
+		042063122A23EA76000220BE /* ConvertsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042063112A23EA76000220BE /* ConvertsTest.swift */; };
+		042063142A23ED85000220BE /* AlertsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042063132A23ED85000220BE /* AlertsTest.swift */; };
+		042063162A240342000220BE /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042063152A240342000220BE /* MockViewController.swift */; };
 		043557C12A18F0E900D120CB /* Sportawy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 043557BF2A18F0E900D120CB /* Sportawy.xcdatamodeld */; };
 		043557C32A19032E00D120CB /* LeagueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043557C22A19032E00D120CB /* LeagueItem.swift */; };
 		044821242A17F333003F26D6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044821232A17F333003F26D6 /* SplashScreen.swift */; };
@@ -25,9 +29,8 @@
 		0462DBF52A1C12F600D38000 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF42A1C12F600D38000 /* Alerts.swift */; };
 		0462DBF72A1C147E00D38000 /* InternetConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */; };
 		0462DBF92A1C2DA500D38000 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF82A1C2DA500D38000 /* UrlCreator.swift */; };
+		048F92F82A23F8AF00F1ED13 /* ConstantsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F92F72A23F8AF00F1ED13 /* ConstantsStrings.swift */; };
 		04A00CEE2A1F3F8500078F00 /* NoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A00CED2A1F3F8500078F00 /* NoDataCell.swift */; };
-		04A71A272A1EAF0C00FB7FB3 /* SportawyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A71A262A1EAF0C00FB7FB3 /* SportawyTests.swift */; };
-		04B4DDEF2A1F728E000FCD55 /* libAlamofire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B4DDEE2A1F728E000FCD55 /* libAlamofire.a */; };
 		04B72D6B2A1A81F6005DBA06 /* EventAndResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6A2A1A81F6005DBA06 /* EventAndResultsCell.swift */; };
 		04B72D6D2A1A8218005DBA06 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6C2A1A8218005DBA06 /* TeamCollectionViewCell.swift */; };
 		04B72D6F2A1A82A3005DBA06 /* LeagueDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6E2A1A82A3005DBA06 /* LeagueDetailsScreen.swift */; };
@@ -50,14 +53,14 @@
 		04D122B72A16DBBF00CD2768 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D122B62A16DBBF00CD2768 /* HomeModels.swift */; };
 		04D122BC2A16DD2300CD2768 /* FavoriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D122BB2A16DD2300CD2768 /* FavoriteModels.swift */; };
 		04D122BE2A16DD3A00CD2768 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D122BD2A16DD3A00CD2768 /* FavoriteViewModel.swift */; };
-		04F00A762A1ECD8200169644 /* Converts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F00A752A1ECD8200169644 /* Converts.swift */; };
+		04F00A762A1ECD8200169644 /* Convertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F00A752A1ECD8200169644 /* Convertor.swift */; };
 		04F00A7A2A1EEEAE00169644 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F00A792A1EEEAE00169644 /* Coach.swift */; };
 		04F00A7C2A1EEECB00169644 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F00A7B2A1EEECB00169644 /* Player.swift */; };
-		7D4ACAB234A761A5A7B4B0BB /* libPods-Sportawy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1B096A9A347868D6CB09C4 /* libPods-Sportawy.a */; };
+		C9AC74B678568745800DE233 /* Pods_Sportawy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE561E1086E1666F4A60AA /* Pods_Sportawy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		04A71A282A1EAF0C00FB7FB3 /* PBXContainerItemProxy */ = {
+		0420630B2A23E409000220BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0455148B2A154F9B00CF97FE /* Project object */;
 			proxyType = 1;
@@ -67,6 +70,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042063072A23E409000220BE /* SportawyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportawyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		042063092A23E409000220BE /* UrlCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreatorTest.swift; sourceTree = "<group>"; };
+		042063112A23EA76000220BE /* ConvertsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertsTest.swift; sourceTree = "<group>"; };
+		042063132A23ED85000220BE /* AlertsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsTest.swift; sourceTree = "<group>"; };
+		042063152A240342000220BE /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		043557C02A18F0E900D120CB /* Sportawy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sportawy.xcdatamodel; sourceTree = "<group>"; };
 		043557C22A19032E00D120CB /* LeagueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueItem.swift; sourceTree = "<group>"; };
 		044821232A17F333003F26D6 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -87,9 +95,8 @@
 		0462DBF42A1C12F600D38000 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectivity.swift; sourceTree = "<group>"; };
 		0462DBF82A1C2DA500D38000 /* UrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreator.swift; sourceTree = "<group>"; };
+		048F92F72A23F8AF00F1ED13 /* ConstantsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsStrings.swift; sourceTree = "<group>"; };
 		04A00CED2A1F3F8500078F00 /* NoDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCell.swift; sourceTree = "<group>"; };
-		04A71A242A1EAF0C00FB7FB3 /* SportawyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportawyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04A71A262A1EAF0C00FB7FB3 /* SportawyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportawyTests.swift; sourceTree = "<group>"; };
 		04B4DDEE2A1F728E000FCD55 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B72D6A2A1A81F6005DBA06 /* EventAndResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAndResultsCell.swift; sourceTree = "<group>"; };
 		04B72D6C2A1A8218005DBA06 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -116,36 +123,54 @@
 		04D122B62A16DBBF00CD2768 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		04D122BB2A16DD2300CD2768 /* FavoriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModels.swift; sourceTree = "<group>"; };
 		04D122BD2A16DD3A00CD2768 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
-		04F00A752A1ECD8200169644 /* Converts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converts.swift; sourceTree = "<group>"; };
+		04F00A752A1ECD8200169644 /* Convertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertor.swift; sourceTree = "<group>"; };
 		04F00A792A1EEEAE00169644 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
 		04F00A7B2A1EEECB00169644 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		04F7414C2A1E7402000BD3A2 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F7414E2A1E7494000BD3A2 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C79FC1804B2B5D5BD0E5579 /* Pods-Sportawy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportawy.debug.xcconfig"; path = "Target Support Files/Pods-Sportawy/Pods-Sportawy.debug.xcconfig"; sourceTree = "<group>"; };
-		3C1B096A9A347868D6CB09C4 /* libPods-Sportawy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sportawy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D8FAFDBEAA9BD395D0487E /* Pods-Sportawy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportawy.release.xcconfig"; path = "Target Support Files/Pods-Sportawy/Pods-Sportawy.release.xcconfig"; sourceTree = "<group>"; };
+		B4BE561E1086E1666F4A60AA /* Pods_Sportawy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportawy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		042063042A23E409000220BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		045514902A154F9B00CF97FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4ACAB234A761A5A7B4B0BB /* libPods-Sportawy.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04A71A212A1EAF0C00FB7FB3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04B4DDEF2A1F728E000FCD55 /* libAlamofire.a in Frameworks */,
+				C9AC74B678568745800DE233 /* Pods_Sportawy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042063082A23E409000220BE /* SportawyTests */ = {
+			isa = PBXGroup;
+			children = (
+				042063102A23E9FF000220BE /* Utilities */,
+			);
+			path = SportawyTests;
+			sourceTree = "<group>";
+		};
+		042063102A23E9FF000220BE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				042063092A23E409000220BE /* UrlCreatorTest.swift */,
+				042063112A23EA76000220BE /* ConvertsTest.swift */,
+				042063132A23ED85000220BE /* AlertsTest.swift */,
+				042063152A240342000220BE /* MockViewController.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		044821202A17F139003F26D6 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				045514952A154F9B00CF97FE /* Sportawy */,
-				04A71A252A1EAF0C00FB7FB3 /* SportawyTests */,
+				042063082A23E409000220BE /* SportawyTests */,
 				045514942A154F9B00CF97FE /* Products */,
 				F677E4CCE550CBC19AA52E1E /* Pods */,
 				C0520E966D98E621182A7C95 /* Frameworks */,
@@ -185,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				045514932A154F9B00CF97FE /* Sportawy.app */,
-				04A71A242A1EAF0C00FB7FB3 /* SportawyTests.xctest */,
+				042063072A23E409000220BE /* SportawyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				0462DBED2A1C0BCD00D38000 /* Utilities */,
-				049C5F1F2A17EF31009C7732 /* resources */,
 				04D122AC2A16DA4700CD2768 /* Modules */,
 				04D122AB2A16D86400CD2768 /* Model */,
 				04D122A82A16D7E300CD2768 /* View */,
@@ -236,9 +260,11 @@
 		0462DBED2A1C0BCD00D38000 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0462DBF42A1C12F600D38000 /* Alerts.swift */,
 				04D122A92A16D84400CD2768 /* ImagesUtilites.swift */,
 				0462DBF82A1C2DA500D38000 /* UrlCreator.swift */,
-				04F00A752A1ECD8200169644 /* Converts.swift */,
+				04F00A752A1ECD8200169644 /* Convertor.swift */,
+				048F92F72A23F8AF00F1ED13 /* ConstantsStrings.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -252,21 +278,6 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
-		0462DBF32A1C12C200D38000 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				0462DBF42A1C12F600D38000 /* Alerts.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		049C5F1F2A17EF31009C7732 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 		04A00CEA2A1F3F1B00078F00 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,14 +287,6 @@
 				04A00CED2A1F3F8500078F00 /* NoDataCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		04A71A252A1EAF0C00FB7FB3 /* SportawyTests */ = {
-			isa = PBXGroup;
-			children = (
-				04A71A262A1EAF0C00FB7FB3 /* SportawyTests.swift */,
-			);
-			path = SportawyTests;
 			sourceTree = "<group>";
 		};
 		04B4D6522A19830900145EA7 /* leagueDetailsScreen */ = {
@@ -379,7 +382,6 @@
 		04D122A82A16D7E300CD2768 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0462DBF32A1C12C200D38000 /* Utilities */,
 				0462DBF02A1C128800D38000 /* cells */,
 				0455149C2A154F9B00CF97FE /* Main.storyboard */,
 				045514A12A154F9D00CF97FE /* LaunchScreen.storyboard */,
@@ -491,7 +493,7 @@
 				04BAF9B82A1E797B00E0DE46 /* libAlamofire.a */,
 				04F7414E2A1E7494000BD3A2 /* libAlamofire.a */,
 				04F7414C2A1E7402000BD3A2 /* libAlamofire.a */,
-				3C1B096A9A347868D6CB09C4 /* libPods-Sportawy.a */,
+				B4BE561E1086E1666F4A60AA /* Pods_Sportawy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -508,6 +510,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		042063062A23E409000220BE /* SportawyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0420630D2A23E409000220BE /* Build configuration list for PBXNativeTarget "SportawyTests" */;
+			buildPhases = (
+				042063032A23E409000220BE /* Sources */,
+				042063042A23E409000220BE /* Frameworks */,
+				042063052A23E409000220BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0420630C2A23E409000220BE /* PBXTargetDependency */,
+			);
+			name = SportawyTests;
+			productName = SportawyTests;
+			productReference = 042063072A23E409000220BE /* SportawyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		045514922A154F9B00CF97FE /* Sportawy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 045514A72A154F9D00CF97FE /* Build configuration list for PBXNativeTarget "Sportawy" */;
@@ -516,6 +536,7 @@
 				0455148F2A154F9B00CF97FE /* Sources */,
 				045514902A154F9B00CF97FE /* Frameworks */,
 				045514912A154F9B00CF97FE /* Resources */,
+				6AC56C34A3995D4706E3A58B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,24 +546,6 @@
 			productName = Sportawy;
 			productReference = 045514932A154F9B00CF97FE /* Sportawy.app */;
 			productType = "com.apple.product-type.application";
-		};
-		04A71A232A1EAF0C00FB7FB3 /* SportawyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04A71A2C2A1EAF0C00FB7FB3 /* Build configuration list for PBXNativeTarget "SportawyTests" */;
-			buildPhases = (
-				04A71A202A1EAF0C00FB7FB3 /* Sources */,
-				04A71A212A1EAF0C00FB7FB3 /* Frameworks */,
-				04A71A222A1EAF0C00FB7FB3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04A71A292A1EAF0C00FB7FB3 /* PBXTargetDependency */,
-			);
-			name = SportawyTests;
-			productName = SportawyTests;
-			productReference = 04A71A242A1EAF0C00FB7FB3 /* SportawyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -554,12 +557,12 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					045514922A154F9B00CF97FE = {
-						CreatedOnToolsVersion = 14.1;
-					};
-					04A71A232A1EAF0C00FB7FB3 = {
+					042063062A23E409000220BE = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 045514922A154F9B00CF97FE;
+					};
+					045514922A154F9B00CF97FE = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -577,12 +580,19 @@
 			projectRoot = "";
 			targets = (
 				045514922A154F9B00CF97FE /* Sportawy */,
-				04A71A232A1EAF0C00FB7FB3 /* SportawyTests */,
+				042063062A23E409000220BE /* SportawyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		042063052A23E409000220BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		045514912A154F9B00CF97FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,16 +604,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04A71A222A1EAF0C00FB7FB3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6AC56C34A3995D4706E3A58B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportawy/Pods-Sportawy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportawy/Pods-Sportawy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportawy/Pods-Sportawy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6D7832C4D2ACC314B299E5FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -629,6 +649,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		042063032A23E409000220BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042063142A23ED85000220BE /* AlertsTest.swift in Sources */,
+				042063162A240342000220BE /* MockViewController.swift in Sources */,
+				0420630A2A23E409000220BE /* UrlCreatorTest.swift in Sources */,
+				042063122A23EA76000220BE /* ConvertsTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0455148F2A154F9B00CF97FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,12 +669,13 @@
 				045514AB2A1550F000CF97FE /* HomeScreen.swift in Sources */,
 				04D122A22A16D70A00CD2768 /* AlamofireNetworkingDataSource.swift in Sources */,
 				0455149B2A154F9B00CF97FE /* ViewController.swift in Sources */,
+				048F92F82A23F8AF00F1ED13 /* ConstantsStrings.swift in Sources */,
 				0462DBF92A1C2DA500D38000 /* UrlCreator.swift in Sources */,
 				04D122A72A16D7AC00CD2768 /* CoreDataLocalDataSource.swift in Sources */,
 				04D122AA2A16D84400CD2768 /* ImagesUtilites.swift in Sources */,
 				045514972A154F9B00CF97FE /* AppDelegate.swift in Sources */,
 				0462DBF72A1C147E00D38000 /* InternetConnectivity.swift in Sources */,
-				04F00A762A1ECD8200169644 /* Converts.swift in Sources */,
+				04F00A762A1ECD8200169644 /* Convertor.swift in Sources */,
 				04D122B72A16DBBF00CD2768 /* HomeModels.swift in Sources */,
 				04CA006B2A16FC9E00883229 /* LeaguesListScreen.swift in Sources */,
 				04B72D792A1AA313005DBA06 /* DrawCollectionViewCell.swift in Sources */,
@@ -676,21 +708,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04A71A202A1EAF0C00FB7FB3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04A71A272A1EAF0C00FB7FB3 /* SportawyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		04A71A292A1EAF0C00FB7FB3 /* PBXTargetDependency */ = {
+		0420630C2A23E409000220BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 045514922A154F9B00CF97FE /* Sportawy */;
-			targetProxy = 04A71A282A1EAF0C00FB7FB3 /* PBXContainerItemProxy */;
+			targetProxy = 0420630B2A23E409000220BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -714,6 +738,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0420630E2A23E409000220BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Joe.SportawyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportawy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sportawy";
+			};
+			name = Debug;
+		};
+		0420630F2A23E409000220BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Joe.SportawyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportawy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sportawy";
+			};
+			name = Release;
+		};
 		045514A52A154F9D00CF97FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -884,51 +950,18 @@
 			};
 			name = Release;
 		};
-		04A71A2A2A1EAF0C00FB7FB3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Joe.SportawyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportawy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sportawy";
-			};
-			name = Debug;
-		};
-		04A71A2B2A1EAF0C00FB7FB3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Joe.SportawyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportawy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sportawy";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0420630D2A23E409000220BE /* Build configuration list for PBXNativeTarget "SportawyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0420630E2A23E409000220BE /* Debug */,
+				0420630F2A23E409000220BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0455148E2A154F9B00CF97FE /* Build configuration list for PBXProject "Sportawy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -943,15 +976,6 @@
 			buildConfigurations = (
 				045514A82A154F9D00CF97FE /* Debug */,
 				045514A92A154F9D00CF97FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		04A71A2C2A1EAF0C00FB7FB3 /* Build configuration list for PBXNativeTarget "SportawyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04A71A2A2A1EAF0C00FB7FB3 /* Debug */,
-				04A71A2B2A1EAF0C00FB7FB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

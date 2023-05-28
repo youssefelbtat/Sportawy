@@ -153,8 +153,6 @@ class LeagueDetailsScreen: UIViewController ,  UICollectionViewDataSource, UICol
                 
                 let sImageUrl = viewModel.allLeagueLastResults[indexPath.row].secondTeamLogo ?? ""
                 
-                let resizedImage = ImageUtilites.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 60, height: 60))
-                
                 ImageUtilites.downloadImageUsingKF(
                     withUrl: fImageUrl,
                     andPlaceholder: "Leagues",

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D374EE3E60AF2927E59DF79D7097EAB"
-               BuildableName = "libPods-Sportawy.a"
+               BuildableName = "Pods_Sportawy.framework"
                BlueprintName = "Pods-Sportawy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
