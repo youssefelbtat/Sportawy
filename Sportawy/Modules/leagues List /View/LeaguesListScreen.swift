@@ -39,20 +39,20 @@ class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataS
             netWorkingDataSource: AlamofireNetworkingDataSource(url: URLCreator().createLeaguesURL(for: sportType)),
             locaDataSource: CoreDataLocalDataSource.instance)
         
+        self.viewModel.loadAllLeagues()
+        self.viewModel.loadAllFavLeagues()
+        
         let nib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         leaguesTableView.register(nib, forCellReuseIdentifier: "cell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // To Show The Indicator even if the internet is fast (:
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.viewModel.loadAllLeagues()
-            self.viewModel.loadAllFavLeagues()
-        })
         
         viewModel.bindDataToView = { [weak self] in
-            self?.indicator.stopAnimating()
             self?.leaguesTableView.reloadData()
+            self?.indicator.stopAnimating()
+            
         }
     }
     
@@ -73,27 +73,33 @@ class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             league = viewModel.allSelctedSportLeagues[indexPath.row]
         }
-        
-        cell.lblLeagueName?.text = league.league_name
-        cell.lblLeagueCounty?.text = league.country_name
-        
-        ImageUtilites.downloadImageUsingKF(
-            withUrl: league.league_logo ?? "",
-            andPlaceholder: "Leagues",
-            inSize: CGSize(width: 90, height: 90),
-            showIn: cell.leagueImage)
-        
         league.league_type = sportType.rawValue.lowercased()
-        cell.itemToAddToFav = league
         
-        if viewModel.allFavSports.contains(where: { $0.league_key == league.league_key }) {
-            cell.isFavorite = true
-            cell.btnfav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            cell.isFavorite = false
-            cell.btnfav.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
+        cell.setupCell(item: league)
 
+        if viewModel.allFavSports.contains(where: { $0.league_key == league.league_key }) {
+            cell.setFavUI(isFav: true)
+        } else {
+            cell.setFavUI(isFav: false)
+            
+        }
+        cell.addOrRemoveFavItem = {
+            if self.viewModel.allFavSports.contains(where: { $0.league_key == league.league_key }) {
+                AlertType.confirmRemove(deleteHandler: {
+                    self.viewModel.removeFavItem(id: league.league_key ?? -1)
+                }).showAlert(in: self)
+                
+
+            } else {
+                self.viewModel.addToFav(item: league)
+                
+            }
+        }
+        cell.youtubeObsearveAction = { [weak self] in
+            
+            AlertType.comingSoon.showAlert(in: self!)
+            
+        }
         
         return cell
     }

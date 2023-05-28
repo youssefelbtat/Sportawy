@@ -7,7 +7,6 @@
 
 import XCTest
 @testable import Sportawy
-//import Alamofire
 final class SportawyTests: XCTestCase {
     
     //var urlCreator : URLCreator!

@@ -26,17 +26,6 @@ class HomeScreen: UIViewController, UICollectionViewDataSource, UICollectionView
         return homeViewModel.allSorts.count
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: (UIScreen.main.bounds.size.width / 2 ) - 10, height: 180)
-        
-
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportscell", for: indexPath) as! SportsCollectionsCell
@@ -70,6 +59,17 @@ class HomeScreen: UIViewController, UICollectionViewDataSource, UICollectionView
         }
         
    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: (UIScreen.main.bounds.size.width / 2 ) - 10, height: 180)
+        
+
+    }
     
     
 }

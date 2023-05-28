@@ -40,7 +40,7 @@ enum AlertType {
         case .confirmRemove:
             return "Are you sure you want to remove this item from favorites?"
         case .comingSoon:
-            return "This item will be available soon."
+            return "This Feature will be available soon."
         }
     }
     

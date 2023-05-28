@@ -66,31 +66,22 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeaguesTableViewCell
 
-        cell.lblLeagueName?.text = viewModel.allFavSports[indexPath.row].league_name
+        cell.setupCell(item: viewModel.allFavSports[indexPath.row])
+        cell.setFavUI(isFav: true)
+        cell.addOrRemoveFavItem = { [weak self] in
+            AlertType.confirmRemove(deleteHandler: {
+                self?.viewModel.deleteFavItem(itemKey: self?.viewModel.allFavSports[indexPath.row].league_key ?? -1)
+            }).showAlert(in: self!)
+            
+            
+        }
+        cell.youtubeObsearveAction = { [weak self] in
+            
+            AlertType.comingSoon.showAlert(in: self!)
+            
+        }
         
-        cell.lblLeagueCounty?.text = viewModel.allFavSports[indexPath.row].country_name
         
-        let imageUrl = URL(string: viewModel.allFavSports[indexPath.row].league_logo ?? "")
-        
-        let resizedImage = ImageUtilites.resizeImage(image: UIImage(named: "Leagues")!, targetSize: CGSize(width: 90, height: 90))
-        
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90) ) |> RoundCornerImageProcessor(cornerRadius: 10)
-        cell.leagueImage!.kf.indicatorType = .activity
-        
-        cell.leagueImage!.kf.setImage(
-            with: imageUrl,
-            placeholder: resizedImage,
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        
-        cell.itemToAddToFav = viewModel.allFavSports[indexPath.row]
-    
-            cell.isFavorite = true
-            cell.btnfav.setImage(UIImage(systemName: "heart.fill"),for: .normal)
         
         return cell
     }
@@ -98,9 +89,11 @@ class FavoriteScreen: UIViewController , UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            
-                self.viewModel.deleteFavItem(itemKey: viewModel.allFavSports[indexPath.row].league_key!)
-                favTableView.deleteRows(at: [indexPath], with: .automatic)
+            AlertType.confirmRemove(deleteHandler: {
+                self.viewModel.deleteFavItem(itemKey: self.viewModel.allFavSports[indexPath.row].league_key!)
+                self.favTableView.deleteRows(at: [indexPath], with: .automatic)
+            }).showAlert(in: self)
+                
         }
         
     }

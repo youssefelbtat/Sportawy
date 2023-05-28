@@ -9,45 +9,48 @@ import UIKit
 
 class LeaguesTableViewCell: UITableViewCell {
 
-    var itemToAddToFav: LeagueItem?
-    var isFavorite: Bool?
-    let dSourceInstance = CoreDataLocalDataSource.instance
-    var viewModel : LeaguesListViewModel?
-    
-    
     @IBOutlet weak var lblLeagueCounty: UILabel!
     @IBOutlet weak var leagueImage: UIImageView!
     @IBOutlet weak var lblLeagueName: UILabel!
     @IBOutlet weak var btnfav: UIButton!
-    
     @IBOutlet weak var btnYoutubeVideo: UIButton!
+    var addOrRemoveFavItem : ()->() = {}
+    var youtubeObsearveAction : ()->() = {}
     override func awakeFromNib() {
         super.awakeFromNib()
+        btnfav.setTitle("", for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
 
     }
     
-    @IBAction func btnYoutubeVideoAction(_ sender: Any) {
+    func setupCell(item : LeagueItem!){
+        self.lblLeagueName?.text = item.league_name
+        self.lblLeagueCounty?.text = item.country_name
         
+        ImageUtilites.downloadImageUsingKF(withUrl: item.league_logo ?? "", andPlaceholder: "Leagues", inSize: CGSize(width: 90, height: 90), showIn: self.leagueImage)
+    }
+    
+    @IBAction func btnYoutubeVideoAction(_ sender: Any) {
+        self.youtubeObsearveAction()
     }
     
     @IBAction func btnFavAction(_ sender: Any) {
-        print("The type : " + (itemToAddToFav?.league_type)!)
+        self.addOrRemoveFavItem()
+    }
+    
+    func setFavUI(isFav:Bool){
         var image:UIImage!
-        if !isFavorite! {
-            self.dSourceInstance.insertItemToDatabase(item: self.itemToAddToFav!)
-            image = UIImage(systemName: "heart.fill")
-            self.isFavorite!.toggle()
-            self.btnfav.setImage(image, for: .normal)
+        if isFav{
+             image = UIImage(systemName: "heart.fill")
+             btnfav.setImage(image, for: .normal)
+            
         }else{
-            self.dSourceInstance.removeItemToDatabase(league_key: (self.itemToAddToFav?.league_key)!)
-                image = UIImage(systemName: "heart")
-                self.isFavorite!.toggle()
-                self.btnfav.setImage(image, for: .normal)
+             image = UIImage(systemName: "heart")
+             btnfav.setImage(image, for: .normal)
         }
+       
     }
 }

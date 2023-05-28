@@ -27,14 +27,12 @@ class TeamDetailsScreen: UIViewController , UITableViewDelegate , UITableViewDat
         self.playersTableView.dataSource = self
         
         viewModel = TeamDetailsViewModel(netWorkingDataSource: AlamofireNetworkingDataSource(url: URLCreator().createOneTeamURL(for: sportType, teamId: teamId)))
-        
+        viewModel.loadTeamData()
         print("The team Url : \(URLCreator().createOneTeamURL(for: sportType, teamId: teamId))")
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        viewModel.loadTeamData()
         
         viewModel.bindDataToView = { [weak self ] in
             
