@@ -47,7 +47,6 @@ class LeaguesListScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // To Show The Indicator even if the internet is fast (:
         
         viewModel.bindDataToView = { [weak self] in
             self?.leaguesTableView.reloadData()
