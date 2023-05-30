@@ -29,6 +29,9 @@
 		0462DBF52A1C12F600D38000 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF42A1C12F600D38000 /* Alerts.swift */; };
 		0462DBF72A1C147E00D38000 /* InternetConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */; };
 		0462DBF92A1C2DA500D38000 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462DBF82A1C2DA500D38000 /* UrlCreator.swift */; };
+		048EBD142A26455500559149 /* AlamofireNetworkingDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EBD132A26455500559149 /* AlamofireNetworkingDataSourceTest.swift */; };
+		048EBD162A26487700559149 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EBD152A26487700559149 /* MockNetworkManager.swift */; };
+		048EBD182A2648BC00559149 /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EBD172A2648BC00559149 /* FakeNetwork.swift */; };
 		048F92F82A23F8AF00F1ED13 /* ConstantsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F92F72A23F8AF00F1ED13 /* ConstantsStrings.swift */; };
 		04A00CEE2A1F3F8500078F00 /* NoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A00CED2A1F3F8500078F00 /* NoDataCell.swift */; };
 		04B72D6B2A1A81F6005DBA06 /* EventAndResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B72D6A2A1A81F6005DBA06 /* EventAndResultsCell.swift */; };
@@ -95,6 +98,9 @@
 		0462DBF42A1C12F600D38000 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		0462DBF62A1C147E00D38000 /* InternetConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectivity.swift; sourceTree = "<group>"; };
 		0462DBF82A1C2DA500D38000 /* UrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreator.swift; sourceTree = "<group>"; };
+		048EBD132A26455500559149 /* AlamofireNetworkingDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkingDataSourceTest.swift; sourceTree = "<group>"; };
+		048EBD152A26487700559149 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		048EBD172A2648BC00559149 /* FakeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
 		048F92F72A23F8AF00F1ED13 /* ConstantsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsStrings.swift; sourceTree = "<group>"; };
 		04A00CED2A1F3F8500078F00 /* NoDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCell.swift; sourceTree = "<group>"; };
 		04B4DDEE2A1F728E000FCD55 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +161,7 @@
 		042063082A23E409000220BE /* SportawyTests */ = {
 			isa = PBXGroup;
 			children = (
+				048EC34E2A2612F5002B34C6 /* Services */,
 				042063102A23E9FF000220BE /* Utilities */,
 			);
 			path = SportawyTests;
@@ -276,6 +283,24 @@
 				04CA00662A16FA4300883229 /* LeaguesTableViewCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		048EBD192A265DDF00559149 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				048EBD132A26455500559149 /* AlamofireNetworkingDataSourceTest.swift */,
+				048EBD152A26487700559149 /* MockNetworkManager.swift */,
+				048EBD172A2648BC00559149 /* FakeNetwork.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		048EC34E2A2612F5002B34C6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				048EBD192A265DDF00559149 /* Networking */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		04A00CEA2A1F3F1B00078F00 /* Cells */ = {
@@ -653,8 +678,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048EBD162A26487700559149 /* MockNetworkManager.swift in Sources */,
 				042063142A23ED85000220BE /* AlertsTest.swift in Sources */,
 				042063162A240342000220BE /* MockViewController.swift in Sources */,
+				048EBD182A2648BC00559149 /* FakeNetwork.swift in Sources */,
+				048EBD142A26455500559149 /* AlamofireNetworkingDataSourceTest.swift in Sources */,
 				0420630A2A23E409000220BE /* UrlCreatorTest.swift in Sources */,
 				042063122A23EA76000220BE /* ConvertsTest.swift in Sources */,
 			);
