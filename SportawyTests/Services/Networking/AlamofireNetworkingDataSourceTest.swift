@@ -26,13 +26,14 @@ final class AlamofireNetworkingDataSourceTest: XCTestCase {
          alamofireDataSource.setURL(url)
          
          let expectation = XCTestExpectation(description: "API response received")
+        
          alamofireDataSource.loadDataFromAPI { (response: LeagueItem?) in
              
              XCTAssertNotNil(response)
              expectation.fulfill()
          }
 
-         wait(for: [expectation], timeout: 5.0)
+         wait(for: [expectation ], timeout: 5.0)
      }
 
      func testLoadDataFromAPI_FailureResponse() {
@@ -41,8 +42,6 @@ final class AlamofireNetworkingDataSourceTest: XCTestCase {
          
          alamofireDataSource = AlamofireNetworkingDataSource(url: url)
          
-         alamofireDataSource.setURL(url)
-
          let expectation = XCTestExpectation(description: "API error response received")
          
          alamofireDataSource.loadDataFromAPI { (response: LeagueItem?) in

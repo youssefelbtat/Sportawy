@@ -60,6 +60,7 @@ extension FakeNetwork : NetWorkingDataSource {
                 compilitionHandler(responseData)
                 
             } catch {
+                compilitionHandler(nil)
                 print("Error decoding JSON: \(error.localizedDescription)")
             }
             

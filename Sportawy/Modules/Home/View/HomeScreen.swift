@@ -31,6 +31,7 @@ class HomeScreen: UIViewController, UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportscell", for: indexPath) as! SportsCollectionsCell
         
         cell.widthImageConstrin.constant = UIScreen.main.bounds.width / 2 - 5
+        cell.heightImageConstrin.constant = UIScreen.main.bounds.height / 4.2 - 5
         cell.imgSportCell.image = UIImage(named: "\(homeViewModel.allSorts[indexPath.row])")
         cell.labSportTitle.text = homeViewModel.allSorts[indexPath.row].rawValue
         

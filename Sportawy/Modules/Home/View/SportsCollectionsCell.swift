@@ -12,4 +12,7 @@ class SportsCollectionsCell: UICollectionViewCell {
     @IBOutlet weak var imgSportCell: UIImageView!
     
     @IBOutlet weak var widthImageConstrin: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightImageConstrin: NSLayoutConstraint!
+    
 }

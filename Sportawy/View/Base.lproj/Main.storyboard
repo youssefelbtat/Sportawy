@@ -213,6 +213,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="186" height="180"/>
                                         <connections>
+                                            <outlet property="heightImageConstrin" destination="bsw-w3-27M" id="g82-kx-dnR"/>
                                             <outlet property="imgSportCell" destination="IAd-dm-1My" id="fWZ-OF-oFw"/>
                                             <outlet property="labSportTitle" destination="YAA-DN-FEd" id="3Oe-G4-aE0"/>
                                             <outlet property="widthImageConstrin" destination="cpg-hi-4rK" id="0gH-H1-n1w"/>
@@ -324,50 +325,67 @@
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bV6-kk-4Zy">
-                                                    <rect key="frame" x="8" y="8" width="111" height="118"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bV6-kk-4Zy">
+                                                    <rect key="frame" x="16" y="8" width="111" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="TN1-Pa-KGF"/>
+                                                        <constraint firstAttribute="height" constant="118" id="WC1-0B-qrz"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Yv-NUs">
-                                                    <rect key="frame" x="248" y="8" width="111" height="118"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KGy-Yv-NUs">
+                                                    <rect key="frame" x="240" y="8" width="111" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="312-WJ-Xcd"/>
+                                                        <constraint firstAttribute="height" constant="118" id="yq2-Ks-1LV"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-Lq-YyT">
-                                                    <rect key="frame" x="244" y="142" width="118" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-Lq-YyT">
+                                                    <rect key="frame" x="246.33333333333334" y="134" width="98.666666666666657" height="19.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2023-05-30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-aY-iyl">
-                                                    <rect key="frame" x="136" y="16" width="98" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-05-30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-aY-iyl">
+                                                    <rect key="frame" x="143" y="24" width="81.333333333333314" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK5-Z1-SO3">
-                                                    <rect key="frame" x="154" y="96" width="59" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK5-Z1-SO3">
+                                                    <rect key="frame" x="165.33333333333334" y="97" width="36.333333333333343" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V.S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PY-hA-s2g">
-                                                    <rect key="frame" x="127" y="52" width="113" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V.S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PY-hA-s2g">
+                                                    <rect key="frame" x="168.66666666666666" y="57" width="30" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" systemColor="systemCyanColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-YX-TBe">
-                                                    <rect key="frame" x="1" y="142" width="125" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Madride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-YX-TBe">
+                                                    <rect key="frame" x="22.333333333333336" y="134" width="98.666666666666657" height="19.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4PY-hA-s2g" firstAttribute="centerX" secondItem="B4w-30-VWJ" secondAttribute="centerX" id="2kW-Rx-y8P"/>
+                                                <constraint firstAttribute="trailing" secondItem="KGy-Yv-NUs" secondAttribute="trailing" constant="16" id="LAm-me-UnU"/>
+                                                <constraint firstItem="2y5-YX-TBe" firstAttribute="centerX" secondItem="bV6-kk-4Zy" secondAttribute="centerX" id="LFX-4C-RSG"/>
+                                                <constraint firstItem="7cP-aY-iyl" firstAttribute="top" secondItem="B4w-30-VWJ" secondAttribute="top" constant="24" id="PbB-BP-tlr"/>
+                                                <constraint firstItem="4PY-hA-s2g" firstAttribute="top" secondItem="7cP-aY-iyl" secondAttribute="bottom" constant="16" id="Tl3-3h-gFt"/>
+                                                <constraint firstItem="vDc-Lq-YyT" firstAttribute="centerX" secondItem="KGy-Yv-NUs" secondAttribute="centerX" id="Xta-Zn-mDF"/>
+                                                <constraint firstItem="KGy-Yv-NUs" firstAttribute="top" secondItem="B4w-30-VWJ" secondAttribute="top" constant="8" id="Xxc-h8-dik"/>
+                                                <constraint firstItem="vDc-Lq-YyT" firstAttribute="top" secondItem="KGy-Yv-NUs" secondAttribute="bottom" constant="8" id="bXV-3t-Tbx"/>
+                                                <constraint firstItem="bV6-kk-4Zy" firstAttribute="leading" secondItem="B4w-30-VWJ" secondAttribute="leading" constant="16" id="i5A-wC-5CP"/>
+                                                <constraint firstItem="2y5-YX-TBe" firstAttribute="top" secondItem="bV6-kk-4Zy" secondAttribute="bottom" constant="8" id="jaG-DN-022"/>
+                                                <constraint firstItem="bV6-kk-4Zy" firstAttribute="top" secondItem="B4w-30-VWJ" secondAttribute="top" constant="8" id="ovZ-zR-xX0"/>
+                                                <constraint firstItem="sK5-Z1-SO3" firstAttribute="centerX" secondItem="B4w-30-VWJ" secondAttribute="centerX" id="uEX-xB-Ubp"/>
+                                                <constraint firstItem="7cP-aY-iyl" firstAttribute="centerX" secondItem="B4w-30-VWJ" secondAttribute="centerX" id="yNu-hw-vXq"/>
+                                                <constraint firstItem="sK5-Z1-SO3" firstAttribute="top" secondItem="4PY-hA-s2g" secondAttribute="bottom" constant="16" id="yc0-Tu-u6n"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="367" height="190"/>
@@ -565,6 +583,9 @@
             <point key="canvasLocation" x="266" y="-280"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="jy6-fI-KcW"/>
+    </designables>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="football" width="612" height="401"/>
